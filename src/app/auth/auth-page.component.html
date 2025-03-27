@@ -1,0 +1,20 @@
+<div class="auth-pageLayout auth-gradient">
+  <header>
+    <div class="auth-header">
+      <h1 class="auth-header__title">Logo here</h1>
+    </div>
+  </header>
+
+  <div class="auth-content">
+    @if(!pageTouched){
+    <div class="">
+      @for(action of actions; track $index){
+      <button (click)="onClick(action.path)">{{action.title}}</button>
+      }
+    </div>
+    }
+    <router-outlet></router-outlet>
+  </div>
+
+
+</div>

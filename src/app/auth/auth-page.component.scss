@@ -1,0 +1,29 @@
+.auth-gradient {
+  --padding-offset: var(--lns-space-xlarge);
+  position: relative;
+  top: 0;
+  z-index: 0;
+}
+.auth-gradient::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  background-image: radial-gradient(
+      circle at top right,
+      #b2e0f1,
+      #fff 42%,
+      #0000 0
+    ),
+    radial-gradient(circle at bottom left, #e1c1de, #fff 42%, #0000 0);
+}
+.auth-pageLayout {
+  display: flex;
+  flex-direction: column;
+  justify-items: stretch;
+  min-height: 100vh;
+  min-height: 100dvh;
+}

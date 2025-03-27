@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnDestroy, inject } from '@angular/core';
+
+import { AuthService } from './auth/auth.service';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'learnedit-app';
+  private authService = inject(AuthService);
+  title = 'Learned It';
 }
