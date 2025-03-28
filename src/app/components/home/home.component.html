@@ -1,28 +1,45 @@
 <div class="home-container">
   <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" style="font-size: 24px;" href="#">Learned It</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <nav class="navbar  bg-body-tertiary " data-bs-theme="dark">
+      <div class="nav-container-01">
+        <div>
+          <a class="navbar-brand" style="font-size: 24px;" href="#">Learned It</a>
 
-          </ul>
+        </div>
+        <div class="utility">
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 
           </form>
+          <div class="nav-item dropdown">
+            <div class="dropdown-container nav-item dropdown">
+              <!-- <a class="nav-link" role="button" data-bs-toggle="dropdown" href="javascript:void()"> -->
+              <mat-icon [ngStyle]="{'color':'white'}" role="button" data-bs-toggle="dropdown"
+                class="profile-icon nav-link">account_circle</mat-icon>
+              <!-- </a> -->
+              <ul class="dropdown-menu">
+                <li class="dropdown-item li-link">Account</li>
+                <li class="dropdown-item li-link" (click)="onSignOut()">Sign out</li>
+                <li class="dropdown-item li-link">Something else here</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
   </header>
   <div id="main-page">
+    @if(!inRoute()){
+    <div class="cards">
+      @for (item of actions; track $index) {
+      <app-card [content]="item.shortDescription" [title]="item.title" (cardClicked)="onCardClick(item.route)">
+      </app-card>
+      }
+    </div>
+    }
 
+    <router-outlet />
   </div>
-
 
   <!-- Site footer -->
   <footer class="site-footer">
@@ -74,4 +91,5 @@
       </div>
     </div>
   </footer>
+
 </div>

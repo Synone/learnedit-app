@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.scss'],
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, MatFormFieldModule],
 })
 export class LoginPageComponent implements OnInit {
   constructor() {}

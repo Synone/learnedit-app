@@ -1,5 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -32,5 +34,8 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.loggedIn.set(false);
+    return new Observable((observer) => {
+      observer.next('loggedout');
+    });
   }
 }

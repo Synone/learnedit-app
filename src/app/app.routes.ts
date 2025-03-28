@@ -1,5 +1,5 @@
-import { Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth-interceptor.guard';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
@@ -12,6 +12,15 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./components/home/home.component').then((m) => m.HomeComponent),
     canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'vocabulary-list',
+        loadComponent: () =>
+          import(
+            './components/features/vocabulary-list/vocabulary-list.component'
+          ).then((m) => m.VocabularyListComponent),
+      },
+    ],
   },
   {
     path: 'auth',
