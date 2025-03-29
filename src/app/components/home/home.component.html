@@ -1,10 +1,9 @@
 <div class="home-container">
   <header>
-    <nav class="navbar  bg-body-tertiary " data-bs-theme="dark">
+    <nav class="navbar nav-header  bg-body-tertiary fixed-top" data-bs-theme="dark">
       <div class="nav-container-01">
         <div>
           <a class="navbar-brand" style="font-size: 24px;" href="#">Learned It</a>
-
         </div>
         <div class="utility">
           <form class="d-flex" role="search">
@@ -28,7 +27,11 @@
       </div>
     </nav>
   </header>
+
   <div id="main-page">
+    <div class="actions-area">
+      <app-routing-action-btns />
+    </div>
     @if(!inRoute()){
     <div class="cards">
       @for (item of actions; track $index) {

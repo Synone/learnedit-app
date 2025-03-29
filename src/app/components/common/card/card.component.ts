@@ -10,13 +10,12 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class CardComponent implements OnInit {
   constructor() {}
-  title = input<string>();
-  content = input<string>();
-  route = input<string>();
+  readonly title = input<string>();
+  readonly content = input<string>();
+  readonly route = input<string>();
   ngOnInit() {}
   @Output() cardClicked = new EventEmitter();
   onCardClick() {
-    console.log(this.title());
     this.cardClicked.emit(this.route());
   }
 }

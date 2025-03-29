@@ -1,6 +1,7 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 
 import { Observable } from 'rxjs';
+import { StateManagerService } from '../services/state-manager.service';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   constructor() {}
   private loggedIn = signal(false);
+  private stateManager = inject(StateManagerService);
   isLoggedIn() {
     // Check if user is logged in
     let user_profile = localStorage.getItem('user_profile');
@@ -34,6 +36,8 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.loggedIn.set(false);
+    this.stateManager.setInRouting(false);
+    this.stateManager.currrentPortalContent.set(undefined);
     return new Observable((observer) => {
       observer.next('loggedout');
     });

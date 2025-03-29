@@ -1,10 +1,10 @@
-[data-bs-theme="light"] {
+[data-bs-theme='light'] {
   #mainNav {
     background-color: var(--bs-light);
   }
 }
 
-[data-bs-theme="dark"] {
+[data-bs-theme='dark'] {
   #mainNav {
     background-color: var(--bs-dark);
   }
@@ -14,9 +14,10 @@
   left: -135px;
   margin-top: calc(var(--bs-dropdown-spacer) + 10px);
 }
-header {
-  position: sticky;
+.nav-header {
   height: auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .nav-container-01 {
   display: flex;
@@ -47,11 +48,17 @@ header {
   height: 100%;
 }
 #main-page {
-  height: 90%;
+  height: 100%;
+  margin-top: 80px;
 }
 .cards {
   height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.actions-area {
+  width: 100%;
+  margin-top: 10px;
+  margin-left: 20px;
 }
