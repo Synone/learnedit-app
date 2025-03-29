@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 .vocab-list-container {
   display: flex;
   justify-content: center;
@@ -8,8 +10,24 @@
 .vocab-list {
   padding: 10px;
   margin: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 20px;
   height: 90%;
-  width: 90%;
+  width: 95%;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.btns-group {
+  display: flex;
+  justify-content: flex-start;
+}
+.action-btn {
+  margin-right: 20px;
+}
+.normal {
+  background-color: antiquewhite;
+}
+.mat-mdc-raised-button.mat-common {
+  color: #f0fff3;
+  background-color: #64a673;
 }
